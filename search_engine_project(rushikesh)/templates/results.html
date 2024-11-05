@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results for "{{ query }}"</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Results for "{{ query }}"</h1>
+    <div class="results">
+        {% for title, url, snippet in results %}
+            <div class="result">
+                <h3><a href="{{ url }}" target="_blank">{{ title }}</a></h3>
+                <p>{{ snippet }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
